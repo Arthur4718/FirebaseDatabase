@@ -12,7 +12,7 @@ object StorageUtil {
 
     private val currentUserREf: StorageReference
         get() = storageInstance.reference
-            .child(FirebaseAuth.getInstance().uid ?: throw NullPointerException("UID is null."))
+            .child(FirebaseAuth.getInstance().currentUser?.uid  ?: throw NullPointerException("UID is null."))
 
     fun uploadProfilePhoto(imageBytes : ByteArray,
                            onSuccess : (imagePath : String) -> Unit){

@@ -17,9 +17,9 @@ class PersonItem (val person : User,
         viewHolder.textView_name.text = person.name
         viewHolder.textView_bio.text = person.bio
 
-        if(person.profilePath!= null){
-            
-        }
+//        if(person.profilePath!= null){
+//
+//        }
     }
 
     override fun getLayout() = R.layout.item_person
