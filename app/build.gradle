@@ -47,11 +47,20 @@ dependencies {
     //glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
 
+    //groupie
+    implementation 'com.xwray:groupie:2.0.3'
+    implementation 'com.xwray:groupie-kotlin-android-extensions:2.0.3'
+
+
 
     kotlin {
         experimental {
             coroutines "enable"
         }
+    }
+
+    androidExtensions {
+        experimental = true
     }
 }
 
