@@ -41,11 +41,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.9'
     implementation 'com.google.firebase:firebase-storage:15.0.2'
     implementation 'com.google.firebase:firebase-firestore:19.0.0'
+    implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
     implementation 'com.google.firebase:firebase-auth:17.0.0'
     implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     //groupie
     implementation 'com.xwray:groupie:2.0.3'

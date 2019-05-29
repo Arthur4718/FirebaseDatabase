@@ -14,7 +14,12 @@ class PersonItem (val person : User,
     : Item(){
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        viewHolder.textView_name
+        viewHolder.textView_name.text = person.name
+        viewHolder.textView_bio.text = person.bio
+
+        if(person.profilePath!= null){
+            
+        }
     }
 
     override fun getLayout() = R.layout.item_person
