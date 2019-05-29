@@ -8,6 +8,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.kotlinandroidextensions.Item
 import devarthur4718.com.firebaseapp.model.User
+import devarthur4718.com.firebaseapp.recyclerviewitem.PersonItem
 
 
 object FireStoreUtil {
@@ -61,10 +62,19 @@ object FireStoreUtil {
                .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                     if(firebaseFirestoreException != null){
                          Log.e("FIRESTORE", " User listener error", firebaseFirestoreException)
+                         return@addSnapshotListener
+                    }
+
+                    val items = mutableListOf<Item>()
+                    querySnapshot?.documents?.forEach {
+                        if(it.id != FirebaseAuth.getInstance().currentUser?.uid){
+                             items.add(PersonItem(it.toObject(User::class.java)!!, it.id, context))
+                        }
                     }
                }
      }
 
+     fun removeListener(registration: ListenerRegistration) = registration.remove()
 
 
 }
